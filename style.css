@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+  }
+  
+  .navbar {
+    background-color: #333;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    width: 100%;
+    position: fixed;
+    height: 5%;
+    top: 0;
+  }
+  
+  .logo {
+    font-size: 1.5em;
+  }
+  
+  .menu {
+    list-style: none;
+    display: flex;
+    transform-origin: top; /* Ajouter cette ligne pour ajuster l'origine de la transformation */
+    transition: transform 0.3s ease;
+  }
+  
+  .menu li {
+    margin: 0 15px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    animation: fadeInUp 0.5s forwards; /* Ajouter une animation fadeInUp */
+  }
+  
+  .menu a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .toggle {
+    font-size: 2.5em;
+    cursor: pointer;
+    display: none;
+    margin-right: 20px;
+  }
+  
+  @media screen and (max-width: 70068px) {
+    .menu {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background-color: #800080;
+      height: 100px;
+    }
+  
+          #menu {
+          position: fixed;
+          }
+  
+          .menu li{
+          margin-top:3px;
+          }
+  
+    .toggle {
+      display: block;
+    }
+  
+    .menu.show {
+      transform: translateY(0);
+    }
+  
+    .menu.show li {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Ajouter la définition de l'animation fadeInUp */
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
